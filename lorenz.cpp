@@ -29,5 +29,5 @@ int main(int argc, char **argv)
 {
         state_type x = { 10.0 , 1.0 , 1.0 }; // initial conditions
         // integrate_times( stepper , system , x0 , time_range , dt , observer )
-        integrate( lorenz , x , 0.0 , 225.0 , 0.1 , write_lorenz );
+        integrate( lorenz , x , 0.0 , 1225.0 , 0.1 , write_lorenz );
 }
