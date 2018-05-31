@@ -1,0 +1,21 @@
+$ bash build_script.sh 1                                    ──(Thu,May31)─┘
++ VALGRIND_OPTIONS='  --leak-check=full         --trace-children=yes         --track-origins=yes         --show-leak-kinds=definite,possible         '
++ MAIN=lorenz.cpp
++ OPT=1
++ '[' 1 -eq 0 ']'
++ '[' 1 -eq 1 ']'
++ clang++-4.0 -O1 -std=c++11 lorenz.cpp -lboost_math_tr1 -o clang_out
++ eval 'time ./clang_out'
+++ ./clang_out
+
+real    0m0.106s
+user    0m0.106s
+sys     0m0.000s
++ g++ -O1 -std=c++11 lorenz.cpp -lboost_math_tr1 -o gcc_out
++ eval 'time ./gcc_out'
+++ ./gcc_out
+
+real    0m0.028s
+user    0m0.028s
+sys     0m0.000s
+
