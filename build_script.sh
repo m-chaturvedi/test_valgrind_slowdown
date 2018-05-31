@@ -37,6 +37,12 @@ elif [ $OPT -eq 3 ]; then
         eval "time valgrind $VALGRIND_OPTIONS ./clang_out"
         g++ -std=c++11 -g -O1 $MAIN -lboost_math_tr1 -o gcc_out  
         eval "time valgrind $VALGRIND_OPTIONS ./gcc_out"
+elif [ $OPT -eq 4 ];then
+        clang++-4.0 -O2 -std=c++11  $MAIN  -lboost_math_tr1 -o clang_out 
+        eval "time ./clang_out"
+
+        g++ -O2 -std=c++11 $MAIN -lboost_math_tr1 -o gcc_out  
+        eval "time ./gcc_out"
 
 fi
 
